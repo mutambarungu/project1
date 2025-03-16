@@ -1,0 +1,32 @@
+.order-now {
+  padding-bottom: 0.3rem;
+  position: relative;
+}
+
+.order-now img {
+  /* height: 600px;
+    width: 100%;
+    object-fit: cover; */
+  width: 100%;
+}
+
+.order-now .order-now-button {
+  position: absolute;
+  top: 27%;
+  left: 65%;
+}
+
+.order-now .order-now-button .join-us {
+  padding: 1rem 3rem;
+  background-color: #009546;
+  /* horizontal-offset vertical-offest blurSize spread color */
+  box-shadow: 0 10px 24px 0 rgba(83, 191, 56, 0.36);
+  outline: none;
+  border: none;
+}
+
+.order-now .order-now-button .join-us span {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+}

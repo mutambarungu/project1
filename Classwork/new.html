@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="contact page.css">
+ 
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul>
+            <li><a href="landing page.html">Home</a></li>
+            <li><a href="login page.html">Login/a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Get In Touch</h1>
+        <p>I'd love to hear from you. Let's turn your ideas into reality.</p>
+    </header>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="circle-icon">
+                    <span class="icon icon-email"></span>
+                </div>
+                <h3>Email</h3>
+                <p>darisblaise@gmail.com</p>
+                <p>I'll respond within 24 hours</p>
+            </div>
+            <div class="contact-card">
+                <div class="circle-icon">
+                    <span class="icon icon-phone"></span>
+                </div>
+                <h3>Phone</h3>
+                <p>+250788968577</p>
+                
+            </div>
+            <div class="contact-card">
+                <div class="circle-icon">
+                    <span class="icon icon-location"></span>
+                </div>
+                <h3>Location</h3>
+                <p>Kigali, Rwanda</p>
+                <p>Available for remote work</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Me a Message</h2>
+            <p style="margin-bottom: 25px;">Have a question or want to work together? Fill out the form below.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="location-map">
+            <iframe src="about:blank" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                Your browser doesn't support iframes.
+            </iframe>
+        </div>
+
+        <h2>Connect With Me</h2>
+        <div class="social-links">
+            <a href="#" title="LinkedIn"><span class="icon-linkedin"></span></a>
+            <a href="#" title="GitHub"><span class="icon-github"></span></a>
+            <a href="#" title="Twitter"><span class="icon-twitter"></span></a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MyPortfolio. All rights reserved. </a></p>
+    </footer>

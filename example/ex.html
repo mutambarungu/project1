@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Form with Image Upload</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .popup h2 {
+            margin-top: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .image-preview {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            display: none;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .button-group button {
+            width: 48%;
+        }
+        
+        .cancel-btn {
+            background-color: #f44336;
+        }
+        
+        .comment {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .comment img {
+            max-width: 100%;
+            max-height: 300px;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .comment small {
+            color: #666;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-container {
+                position: fixed;
+                top: 0;
+                right: -250px;
+                width: 250px;
+                height: 100%;
+                background-color: #333;
+                z-index: 999;
+                transition: right 0.3s ease;
+                padding-top: 60px;
+            }
+            
+            .nav-container.active {
+                right: 0;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+                border-bottom: 1px solid #444;
+            }
+            
+            .nav-menu li a {
+                display: block;
+                padding: 15px;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .button-group button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 class="site-title">Comment Form</h1>
+            
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-container" id="navContainer">
+                <button class="close-menu" id="closeMenuBtn"></button>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Comments</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <p>Click the button below to open the comment form:</p>
+        
+        <button id="openPopupBtn">Add Comment</button>
+        
+        <div id="commentsContainer">
+            <h2>Comments</h2>
+            <div id="commentsList"></div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="commentOverlay">
+        <div class="popup">
+            <h2>Add Your Comment</h2>
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="commentText">Your Comment:</label>
+                    <textarea id="commentText" name="commentText" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="commentImage">Add Image (optional):</label>
+                    <input type="file" id="commentImage" name="commentImage" accept="image/*">
+                    <div class="image-preview">
+                        <img id="imagePreview" src="#" alt="Image Preview">
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+                    <button type="submit">Submit Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const openPopupBtn = document.getElementById('openPopupBtn');
+            const commentOverlay = document.getElementById('commentOverlay');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const commentForm = document.getElementById('commentForm');
+            const commentImage = document.getElementById('commentImage');
+            const imagePreview = document.getElementById('imagePreview');
+            const commentsList = document.getElementById('commentsList');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const navContainer = document.getElementById('navContainer');
+            
+            // Toggle hamburger menu
+            hamburgerBtn.addEventListener('click', function() {
+                navContainer.classList.add('active');
+            });
+            
+            // Close menu
+            closeMenuBtn.addEventListener('click', function() {
+                navContainer.classList.remove('active');
+            });
+            
+            // Close menu when clicking a link (optional)
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navContainer.classList.remove('active');
+                });
+            });
+            
+            // Open popup when button is clicked
+            openPopupBtn.addEventListener('click', function() {
+                commentOverlay.style.display = 'flex';
+            });
+            
+            // Close popup when cancel button is clicked
+            cancelBtn.addEventListener('click', function() {
+                commentOverlay.style.display = 'none';
+                commentForm.reset();
+                imagePreview.style.display = 'none';
+            });
+            
+            // Image preview functionality
+            commentImage.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Form submission
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const commentText = document.getElementById('commentText').value;
+                const imageFile = commentImage.files[0];
+                
+                // Create a new comment element
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                
+                // Add comment text
+                const textElement = document.createElement('p');
+                textElement.textContent = commentText;
+                commentElement.appendChild(textElement);
+                
+                // Add image if one was selected
+                if (imageFile) {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(imageFile);
+                    commentElement.appendChild(img);
+                }
+                
+                // Add timestamp
+                const timestamp = document.createElement('small');
+                timestamp.textContent = new Date().toLocaleString();
+                commentElement.appendChild(timestamp);
+                
+                // Add the comment to the comments list
+                commentsList.prepend(commentElement);
+                
+                // Close and reset the form
+                commentOverlay.style.display = 'none';
+                commentForm.reset();
+                imagePreview.style.display = 'none';
+            });
+            
+            // Close popup when clicking outside of it
+            commentOverlay.addEventListener('click', function(e) {
+                if (e.target === commentOverlay) {
+                    commentOverlay.style.display = 'none';
+                    commentForm.reset();
+                    imagePreview.style.display = 'none';
+                }
+            });
+            
+            // Close menu when clicking outside (optional)
+            document.addEventListener('click', function(e) {
+                if (navContainer.classList.contains('active') && 
+                    !navContainer.contains(e.target) && 
+                    e.target !== hamburgerBtn && 
+                    !hamburgerBtn.contains(e.target)) {
+                    navContainer.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

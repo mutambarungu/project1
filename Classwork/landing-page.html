@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        
+        <!-- Hamburger menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <img src="134216_menu_lines_hamburger_icon.svg" alt="hamburger menu">
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="landing-page.html">Home</a></li>
+            <li><a href="contact page.html">Contact</a></li>
+            <li><a href="login page.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>MUTAMBARUNGU Blaise Daris</h1>
+        <h2>Full Stack Software Developer</h2>
+    </header>
+
+    <div class="container">
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Passionate about creating elegant, efficient solutions that solve real-world problems. I blend technical expertise with creative problem-solving to build innovative software applications.
+                As a software engineer, I'm passionate about building efficient and user-friendly applications. I thrive in collaborative environments, working alongside talented teams to deliver innovative solutions. My expertise lies in C++, K8S, IoT, and now adding Java to it, which I leverage to develop robust and scalable software systems. I'm a quick learner and constantly seeking opportunities to expand my knowledge, keeping up with the latest advancements in the field.</p>
+        </section>
+
+        <section class="projects">
+            <div class="project">
+                <h3>Web Development</h3>
+                <p>Creating responsive web applications using React, Node.js, and modern web technologies.</p>
+            </div>
+            <div class="project">
+                <h3>Backend Solutions</h3>
+                <p>An interactive and responsive application for better user engagement.</p>
+            </div>
+            <div class="project">
+                <h3>DevOps & Cloud</h3>
+                <p>Implementing CI/CD pipelines and cloud infrastructure using Docker, Kubernetes, and AWS.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');  
+            // is a property in JavaScript that allows you to work with an element's class attributes. 
+            // It provides methods to add, remove, toggle, and check for classes.  
+            
+            // toggle is a method of classList that adds a class if it's not present and 
+            // removes it if it is present.
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

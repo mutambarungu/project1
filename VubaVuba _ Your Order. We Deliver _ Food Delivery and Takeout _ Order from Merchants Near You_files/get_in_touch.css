@@ -1,0 +1,162 @@
+a {
+  text-decoration: none;
+}
+
+.get-in-touch {
+  padding: 8rem 0;
+  background-color: #f1ffee;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.get-in-touch .title {
+  font-size: 2.5rem;
+  color: #53bf38;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.get-in-touch .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
+}
+
+.get-in-touch .inputs .name-email {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+}
+
+.get-in-touch .inputs .name-email input,
+.get-in-touch .inputs .tel input {
+  border: 1px solid #eee;
+  outline: none;
+  color: #666;
+  width: 100%;
+  padding: 0.8rem 0;
+  padding-left: 0.5rem;
+}
+
+.get-in-touch .inputs .tel input {
+  /* width: 50%; */
+}
+
+.get-in-touch .inputs .name-email .name,
+.get-in-touch .inputs .name-email .email {
+  flex-basis: 50%;
+}
+
+.get-in-touch .inputs .name-email input::placeholder,
+.get-in-touch .inputs .tel input::placeholder {
+  color: rgba(125, 125, 125, 0.6);
+}
+
+.get-in-touch .inputs .message textarea {
+  outline: none;
+  border: 1px solid #eee;
+  color: #666;
+  width: 100%;
+  padding: 0;
+  padding: 0.8rem 0;
+  padding-left: 0.5rem;
+}
+
+.get-in-touch .inputs .message textarea::placeholder {
+  color: rgba(125, 125, 125, 0.6);
+}
+
+.get-in-touch .inputs .get-in-touch-submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.get-in-touch .inputs .get-in-touch-submit-button button {
+  padding: 0.8rem 3rem;
+  background-color: #009546;
+  /* horizontal-offset vertical-offest blurSize spread color */
+  box-shadow: 0 10px 24px 0 rgba(83, 191, 56, 0.36);
+  outline: none;
+  border: none;
+  transition: transform 0.5s ease;
+}
+
+.get-in-touch .inputs .get-in-touch-submit-button button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.get-in-touch .inputs .get-in-touch-submit-button button span {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.get-in-touch .switcher {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+}
+.get-in-touch .switcher .general {
+  padding: 0.6rem 4rem;
+  /* background-color: transparent;
+  color: #009546;
+  border: 1px solid #d3d3d3; */
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+}
+.get-in-touch .switcher .partners {
+  padding: 0.6rem 4rem;
+  /* background-color: #009546;
+  color: #fff;
+  border: 1px solid #009546; */
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.get-in-touch .switcher .active {
+  background-color: #009546;
+  color: #fff;
+  border: 1px solid #009546;
+}
+
+.get-in-touch .switcher .inactive {
+  background-color: transparent;
+  color: #009546;
+  border: 1px solid #d3d3d3;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 600px) {
+  .get-in-touch .inputs {
+    width: 80%;
+  }
+
+  .get-in-touch .inputs .name-email {
+    flex-direction: column;
+  }
+
+  .get-in-touch .switcher .general,
+  .get-in-touch .switcher .partners {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .get-in-touch .switcher .general,
+  .get-in-touch .switcher .partners {
+    padding: 0.4rem 1rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+  .get-in-touch .inputs {
+    width: 80%;
+  }
+}

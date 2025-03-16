@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  /* font-family: "Josefin Sans"; */
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.whatsapp-button {
+  position: fixed;
+  z-index: 4;
+  right: 2rem;
+  bottom: 0.5rem;
+  height: fit-content !important;
+}
+
+.whatsapp-button a svg {
+  width: 4rem;
+  height: 6rem;
+  filter: drop-shadow(2px 2px 3px #999);
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 0) and (max-width: 350px) {
+  .whatsapp-button {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .whatsapp-button a svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 600px) {
+  .whatsapp-button {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .whatsapp-button a svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  .whatsapp-button {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .whatsapp-button a svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

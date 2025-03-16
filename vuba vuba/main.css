@@ -1,0 +1,122 @@
+
+.header {
+background-color: #008f43;
+width: 100%;
+display: flex;
+flex-direction: row;
+gap: 10px;
+top: 0;
+position: fixed;
+padding: 10px;
+left: 0;
+position: fixed;
+justify-content: space-between;
+align-items: center;
+
+}
+.header-right{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+   
+}
+
+.header-right a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.header a:hover{
+text-decoration:underline
+}
+.header img{
+    width: 60px;
+    padding-left: 25px;
+}
+.how{
+    color: black;
+    margin-top:70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: x-large;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+     width: 100%;
+     justify-content: center;
+}
+
+.container .container1{
+    width: 33.3%;
+    margin: 2rem;
+}
+.download{
+    margin-top: 150px;
+   
+}
+.download h1{
+    color: #008f43;
+}
+.down{
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    
+}
+.text{
+    font-size: x-small;
+}
+.menu{
+    display: none;
+}
+@media screen and (max-width: 600px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .container1{
+        width: 100%;
+    }
+    .how{
+        margin-top: 100px;
+    }
+    .download{
+        margin-top: 100px;
+    }
+    .header img{
+        width: 40px;
+    }
+    .header{
+        padding: 5px;
+    }
+    .header-right a{
+        padding: 5px;
+    }
+    .header-right{
+        gap: 5px; 
+        display: none;
+        flex-direction: column;
+    }
+    .header-right.active{
+        
+        display: flex;
+    }
+    .down{
+        padding: 5px;
+    }
+    .container1{
+        margin-left: 0px;
+    }
+    .text{
+        font-size: small;
+    }
+  .menu{
+    display: block;
+  }  
+}

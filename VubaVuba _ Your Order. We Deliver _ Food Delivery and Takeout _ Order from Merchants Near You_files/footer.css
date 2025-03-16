@@ -1,0 +1,385 @@
+.footer {
+  background-image: url("../assets/footer/footerbg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 8rem 1rem 6rem 1rem;
+  background-position: 100%;
+}
+
+.footer .footer-content {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+  padding-left: 4rem;
+  /* padding-right: 4rem; */
+  margin-bottom: 8rem;
+  /* justify-content: center; */
+}
+
+.footer .vv-logo-socials {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+}
+
+.footer .vv-logo-socials .logo img {
+  width: 8rem;
+  height: 5rem;
+}
+
+.footer .vv-logo-socials .slogan {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.footer .vv-logo-socials .join-us-on {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.footer .vv-logo-socials .social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer .vv-logo-socials .dbi-certification {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer .vv-logo-socials .dbi-certification .protection-icon {
+  margin-right: 0.2rem;
+  display: flex;
+}
+
+.footer .vv-logo-socials .dbi-certification .protection-icon img {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.footer .vv-logo-socials .dbi-certification .certif-logo img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.footer .vv-logo-socials .dbi-certification .trust-seal-valid {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+.footer .payment-methods .title {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+.footer .payment-methods .methods {
+  /* background: #fff; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.footer .payment-methods .methods .row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.footer .payment-methods .methods .row .img-circle {
+  border-radius: 50%;
+  background: #fff;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+}
+
+.footer .payment-methods .methods img {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* .footer .payment-methods .methods .row:nth-child(1) img:nth-child(1) {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 1px solid red;
+} */
+
+.footer .user-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .user-link .title {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+.footer .user-link .items ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer .user-link .items li {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.footer .user-link .items li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer .contact-us {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .contact-us .title {
+  color: #fff;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+.footer .contact-us .description {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.51rem;
+}
+
+.footer .contact-us .description span {
+  /* text-decoration: underline; */
+  font-weight: 400;
+}
+
+.footer .contact-us .description span a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.footer .downloads .title {
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.footer .downloads .description {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.255rem;
+  margin-bottom: 2rem;
+}
+
+.footer .downloads img {
+  height: 2.5rem;
+  width: 70%;
+}
+
+.footer .downloads img:hover {
+  cursor: pointer;
+}
+
+.footer .copyright {
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* .footer .payment-methods .methods .img-circle-mobo {
+  display: none;
+} */
+
+.footer .downloads .app-play-store-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.footer .downloads .app-play-store-buttons .app-store a img,
+.footer .downloads .app-play-store-buttons .play-store a img {
+  width: 8rem;
+}
+
+.footer .payment-methods .mobo-methods {
+  display: none;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 4rem 0 2rem 0;
+  }
+  .footer .footer-content {
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 2rem;
+  }
+  .footer .payment-methods .methods {
+    display: none;
+  }
+
+  .footer .footer-content .payment-methods .mobo-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer .payment-methods .mobo-methods .mobo-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer .payment-methods .mobo-methods .mobo-row .img-circle-mobo img {
+    display: block;
+    border-radius: 50%;
+    background: #fff;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+  }
+  .footer .downloads .app-play-store-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer .downloads .app-store {
+    margin-bottom: 0;
+    /* border: 1px solid red; */
+  }
+
+  .footer .downloads .app-store img,
+  .footer .downloads .play-store img {
+    width: 10rem;
+    height: 2.5rem; /* object-fit: cover; */
+    border-radius: 8px;
+  }
+
+  /* .footer .downloads .play-store img {
+    width: 9.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+  } */
+}
+
+@media only screen and (max-width: 550px) {
+  /* .footer .footer-content .payment-methods .methods {
+    padding: 1rem 0;
+  } */
+
+  .footer
+    .footer-content
+    .payment-methods
+    .methods
+    .footer
+    .downloads
+    .app-store
+    img,
+  .footer .downloads .play-store img {
+    width: 9rem;
+    /* height: 2.6rem; */
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .footer .downloads .app-store img,
+  .footer .downloads .play-store img {
+    width: 7.8rem;
+    height: 2.5rem;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .footer .downloads .app-play-store-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer .downloads .app-store img,
+  .footer .downloads .play-store img {
+    width: 9.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .footer {
+    padding: 4rem 0 2rem 0;
+  }
+  .footer .footer-content {
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer .footer-content .payment-methods .methods {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer .footer-content {
+    flex-wrap: wrap;
+    gap: 6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer .footer-content {
+    flex-wrap: wrap;
+    gap: 6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1371px) {
+  .footer .vv-logo-socials .dbi-certification .trust-seal-valid {
+    font-size: 0.8rem;
+  }
+  .footer .downloads .app-store a img,
+  .footer .downloads .play-store a img {
+    height: 2.5rem;
+    width: 8.5rem;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .footer .footer-content {
+    padding-left: 0;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .footer .downloads .app-store a img,
+  .footer .downloads .play-store a img {
+    height: 2.5rem;
+    width: 8.5rem;
+    object-fit: cover;
+  }
+}
